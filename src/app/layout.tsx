@@ -1,14 +1,13 @@
-import type { Metadata } from "next"
-import { Orbitron, Poppins } from "next/font/google"
-import "./globals.css"
-import { SearchProvider } from "./context/SearchContext"
-import { CartProvider } from "./context/CartContext"
-import { WishlistProvider } from "./context/WishlistContext"
+import type { Metadata } from "next";
+import { Orbitron, Poppins, DM_Sans } from "next/font/google";
+import "./globals.css";
+import { SearchProvider } from "./context/SearchContext";
+import { CartProvider } from "./context/CartContext";
+import { WishlistProvider } from "./context/WishlistContext";
 
-
-import Script from "next/script"
-import Header from "./components/Header"
-import Footer from "./components/Footer"
+import Script from "next/script";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 const orbitron = Orbitron({
   subsets: ["latin"],
@@ -23,9 +22,16 @@ const poppins = Poppins({
   display: "swap",
 });
 
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+  variable: "--font-dm-sans",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: "Media Mart Store",
-  description: "Media Mart  Project",
+  description: "Media Mart Project",
 };
 
 export default function RootLayout({
@@ -43,13 +49,13 @@ export default function RootLayout({
           href="https://cdn.snipcart.com/themes/v3.2.0/default/snipcart.css"
         />
       </head>
-      <body className={`${orbitron.variable} ${poppins.variable} font-poppins antialiased`}>
+      <body className={`${orbitron.variable} ${poppins.variable} ${dmSans.variable} font-poppins antialiased`}>
         <SearchProvider>
           <CartProvider>
             <WishlistProvider>
-              <Header/>
+              <Header />
               {children}
-              <Footer/>
+              <Footer />
             </WishlistProvider>
           </CartProvider>
         </SearchProvider>

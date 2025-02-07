@@ -45,7 +45,7 @@ export default function Header({ products = [] }: { products?: Product[] }) {
     <header className="bg-black text-white sticky top-0 z-50 shadow-md">
       {/* Top Bar */}
       <div className="container mx-auto flex flex-wrap items-center justify-between py-2 px-4">
-        <p className="text-sm text-center md:text-left w-full md:w-auto mb-2 md:mb-0">
+        <p className="text-sm text-center md:text-left w-full md:w-auto mb-2 md:mb-0 font-dmSans">
           Get special price up to{" "}
           <span className="text-green-500">50% off</span> our products
         </p>
@@ -54,7 +54,7 @@ export default function Header({ products = [] }: { products?: Product[] }) {
             <span>🌍</span>
             <select
               title="Select Language"
-              className="bg-black text-green-500 text-sm outline-none cursor-pointer"
+              className="bg-black text-green-500 text-sm outline-none cursor-pointer font-dmSans"
             >
               <option value="en">English</option>
               <option value="fr">French</option>
@@ -64,7 +64,7 @@ export default function Header({ products = [] }: { products?: Product[] }) {
             <span>💲</span>
             <select
               title="Select Currency"
-              className="bg-black text-green-500 text-sm outline-none cursor-pointer"
+              className="bg-black text-green-500 text-sm outline-none cursor-pointer font-dmSans"
             >
               <option value="usd">USD</option>
               <option value="eur">EUR</option>
@@ -78,7 +78,7 @@ export default function Header({ products = [] }: { products?: Product[] }) {
         <div className="container mx-auto flex items-center justify-between py-4 px-4 relative">
           {/* Logo */}
           <Link href="/">
-            <h1 className="text-green-500 text-2xl md:text-3xl font-bold font-orbitron tracking-wider hover:text-green-400 transition-colors duration-300">
+            <h1 className="text-green-500 text-2xl md:text-3xl font-bold font-orbitron tracking-wider hover:text-green-400 transition-colors duration-300 font-dmSans">
               Media Mart
             </h1>
           </Link>
@@ -96,7 +96,7 @@ export default function Header({ products = [] }: { products?: Product[] }) {
               <Link
                 key={item.name}
                 href={item.href}
-                className="hover:text-green-500 transition duration-300"
+                className="hover:text-green-500 transition duration-300 font-dmSans"
               >
                 {item.name}
               </Link>
@@ -108,7 +108,7 @@ export default function Header({ products = [] }: { products?: Product[] }) {
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="bg-gray-800 text-white rounded px-3 py-1 outline-none focus:ring-2 focus:ring-green-500 transition-all"
+                className="bg-gray-800 text-white rounded px-3 py-1 outline-none focus:ring-2 focus:ring-green-500 transition-all font-dmSans"
                 placeholder="Search..."
               />
               {isSearchOpen && searchQuery && (
@@ -117,7 +117,7 @@ export default function Header({ products = [] }: { products?: Product[] }) {
                     {filteredProducts.map((product) => (
                       <li
                         key={product._id}
-                        className="p-2 hover:bg-gray-200 cursor-pointer"
+                        className="p-2 hover:bg-gray-200 cursor-pointer font-dmSans"
                       >
                         {product.name}
                       </li>
@@ -130,7 +130,7 @@ export default function Header({ products = [] }: { products?: Product[] }) {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-white focus:outline-none p-2 rounded-md transition-all duration-300 hover:bg-gray-800"
+            className="md:hidden text-white focus:outline-none p-2 rounded-md transition-all duration-300 hover:bg-gray-800 font-dmSans"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? (
@@ -156,7 +156,7 @@ export default function Header({ products = [] }: { products?: Product[] }) {
                 <li key={item.name}>
                   <Link
                     href={item.href}
-                    className="block hover:text-green-500 transition duration-300"
+                    className="block hover:text-green-500 transition duration-300 font-dmSans"
                   >
                     {item.name} {item.name === "Cart" && `(${totalItems})`}
                   </Link>

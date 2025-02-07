@@ -105,15 +105,15 @@ export default function Best() {
 
   return (
     <div id="product">
-      <section className="py-16 px-4 bg-black">
+      <section className="py-16 px-4 bg-gradient-to-r from-black via-gray-900 to-black">
         <div className="container mx-auto">
           <div className="flex justify-between items-center mb-8">
-            <h2 className="text-4xl font-bold text-white font-orbitron">
+            <h2 className="text-4xl font-bold text-green-500 font-orbitron font-dmSans font-bold">
               Best Seller <span className="text-green-500">Products</span>
             </h2>
             <Link
               href="/products"
-              className="text-green-500 hover:text-green-400 transition-colors"
+              className="text-green-500 hover:text-green-400 transition-colors font-dmSans font-bold"
             >
               View All Products
             </Link>
@@ -123,7 +123,7 @@ export default function Best() {
             {products.map((product) => (
               <div
                 key={product.id}
-                className="bg-[#111] rounded-lg overflow-hidden relative group hover:transform hover:scale-[1.02] transition-transform duration-300"
+                className="bg-[#111] rounded-lg overflow-hidden relative group hover:transform hover:scale-[1.02] transition-transform duration-300 font-dmSans font-bold"
               >
                 <div className="aspect-square relative">
                   <Image
@@ -141,27 +141,27 @@ export default function Best() {
                 </div>
 
                 <div className="p-4">
-                  <h3 className="text-white font-semibold mb-2 truncate">
+                  <h3 className="text-green-500 font-semibold mb-2 truncate font-dmSans font-bold">
                     {product.name}
                   </h3>
                   <div className="flex items-center gap-2 mb-2">
-                    <span className="text-green-500 font-bold">
+                    <span className="text-green-500 font-bold font-dmSans font-bold">
                       ${product.price}
                     </span>
                     {product.discountPercentage > 0 && (
-                      <span className="text-gray-400 line-through text-sm">
+                      <span className="text-gray-400 line-through text-sm font-dmSans font-bold">
                         ${product.originalPrice.toFixed(2)}
                       </span>
                     )}
                   </div>
                   <div className="flex items-center gap-2 mb-4">
                     <StarRating rating={product.rating} />
-                    <span className="text-gray-400 text-sm">
+                    <span className="text-gray-400 text-sm font-dmSans font-bold">
                       ({product.reviews})
                     </span>
                   </div>
                   <button
-                    className="snipcart-add-item w-full bg-green-500 text-white py-2 rounded-md hover:bg-green-600 transition-colors active:scale-[0.98] transform"
+                    className="snipcart-add-item w-full bg-green-500 text-white py-2 rounded-md hover:bg-green-600 transition-colors active:scale-[0.98] transform font-dmSans font-bold"
                     data-item-id={product.id}
                     data-item-price={product.price}
                     data-item-url={`/products/${product.id}`}
